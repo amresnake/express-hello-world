@@ -1,19 +1,8 @@
-const express = require("express");
-const app = express();
-const port = process.env.PORT || 3001;
-
-app.get("/", (req, res) => res.type('html').send(html));
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
-
-const html = `
-<!DOCTYPE html>
-<html>
-  <head>
+<head>
     <script type="text/javascript" src="https://enamto--uat.sandbox.my.salesforce-sites.com/lightning/lightning.out.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <p>xxxxxx hello world xxxxxx</p>
     <p>xxxxxxxxxxxxxxxxxxxxxxxxx</p>
     <br/><br/>
@@ -25,11 +14,15 @@ const html = `
     <br/><br/>
     <p>xxxxxxxxxxxxxxxxxxxxxxxxx</p>
     <p>xxxxxxxxxxxxxxxxxxxxxxxxx</p>
-  </body>
-  <script>
+</body>
+
+<script>
+
     $Lightning.use("c:APP_AnnuaireEducation", function () {
         $Lightning.createComponent("c:LC_AnnuaireEducation",
             {
+                //clientId: '3MVG9sSN_PMn8tjSbQP0R6tMqnAwOb4oIxyybTIqNGUm1ggphVTVoxpIuRCFHmMm83fxLdyMGE1rWCgeTM0AU',
+                //clientSecret: '69597E89E87DB00D5D2188223DB76AE9DC2493AA75D6E8399F90ADE2CC3ED5E9x'
             },
             "auraCmpId",
             function (cmp) {
@@ -37,6 +30,4 @@ const html = `
             }
         )
     });
-  </script>
-</html>
-`
+</script>
