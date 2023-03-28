@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <script type="text/javascript" src="https://enamto--uat.sandbox.my.salesforce-sites.com/lightning/lightning.out.js"></script>
+
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -49,13 +51,13 @@
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html"> About </a>
+                  <a class="nav-link" href="about.html"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html"> Shop </a>
+                  <a class="nav-link" href="shop.html"> Shop </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html"> Glasses </a>
+                  <a class="nav-link" href="glass.html"> Glasses </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact us</a>
@@ -186,9 +188,13 @@
 
   <!-- end about section -->
 
+  <section class="layout_padding" style="background: #bcc4f2; padding-left: 3%; padding-right: 3%; padding-top: 30px;">
+    <div id="auraCmpId"></div>
+  </section>
+
   <!-- glass section -->
 
-  <section class="glass_section layout_padding">
+  <section class="glass_section layout_padding" style="background: #d8dde2;">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -617,6 +623,22 @@
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
+  
+  <script>
+
+    $Lightning.use("c:APP_AnnuaireEducation", function () {
+        $Lightning.createComponent("c:LC_AnnuaireEducation",
+            {
+                //clientId: '3MVG9sSN_PMn8tjSbQP0R6tMqnAwOb4oIxyybTIqNGUm1ggphVTVoxpIuRCFHmMm83fxLdyMGE1rWCgeTM0AU',
+                //clientSecret: '69597E89E87DB00D5D2188223DB76AE9DC2493AA75D6E8399F90ADE2CC3ED5E9x'
+            },
+            "auraCmpId",
+            function (cmp) {
+                console.log("IT WORKSSSSSSS");
+            }
+        )
+    });
+</script>
 
 </body>
 
